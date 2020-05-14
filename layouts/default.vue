@@ -8,21 +8,20 @@
       app
     >
       <v-list>
+      <v-list-item-group v-model="list" color="orange darken-2">
         <v-list-item
           v-for="(item, i) in items"
           :key="i"
-          :to="item.to"
-          router
-          exact
         >
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
+          <v-list-item-icon>
+            <v-icon v-text="item.icon"></v-icon>
+          </v-list-item-icon>
           <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
+            <v-list-item-title v-text="item.title"></v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-      </v-list>
+      </v-list-item-group>
+    </v-list>
     </v-navigation-drawer>
     <v-app-bar
       :clipped-left="clipped"
@@ -192,10 +191,8 @@
     </v-content>
     
     <v-footer
-      :fixed="fixed"
-      app
     >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <h1>hello</h1>
     </v-footer>
   </v-app>
 </template>
@@ -204,16 +201,42 @@
 export default {
   data () {
     return {
+      list: 0,
       menuCard: false,
       clipped: true,
       drawer: false,
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Products',
-          to: '/'
-        }
+          title: 'Home',
+          to: '/',
+          icon: 'mdi-home'
+        },
+        {
+          title: 'Contact Us',
+          to: '/',
+          icon: 'mdi-contacts'
+        },
+        {
+          title: 'About Us',
+          to: '/',
+          icon: 'mdi-account-multiple'
+        },
+        {
+          title: 'Site Map',
+          to: '/',
+          icon: 'mdi-map'
+        },
+        {
+          title: 'News',
+          to: '/',
+          icon: 'mdi-newspaper'
+        },
+        {
+          title: 'FAQs',
+          to: '/',
+          icon: 'mdi-help-circle'
+        },
       ],
       miniVariant: false,
       right: true,

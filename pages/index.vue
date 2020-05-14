@@ -1,8 +1,9 @@
 <template>
  
+ <div>
       <v-carousel
         cycle
-        height="550"
+        height="600"
         hide-delimiter-background
         show-arrows-on-hover
       >
@@ -24,6 +25,16 @@
         </v-sheet>
       </v-carousel-item>
   </v-carousel>
+
+  <v-container fluid class="px-12">
+    <v-row class="pa-5">
+      <v-col cols="12">
+        <h2>Our Popular Brands</h2>
+      </v-col>
+    </v-row>
+  </v-container>
+</div>
+  
 
 </template>
 
