@@ -1,0 +1,19 @@
+{
+  "name": "hattons-v2",
+  "version": "1.0.0",
+  "description": "Your local online railway specialist",
+  "author": "Abul Kalam Azad",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/vuetify": "^1.0.0"
+  }
+}
