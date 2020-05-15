@@ -1,5 +1,6 @@
 <template>
   <v-app dark>
+    <!-- navigation drawer of app -->
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -23,6 +24,8 @@
       </v-list-item-group>
     </v-list>
     </v-navigation-drawer>
+
+    <!-- app bar -->
     <v-app-bar
       :clipped-left="clipped"
       color="orange darken-2"
@@ -31,9 +34,11 @@
     >
       <v-app-bar-nav-icon dark @click.stop="drawer = !drawer" />
     
-      <v-toolbar-title class="white--text pr-4" v-text="title" />
+      <v-toolbar-title class="white--text pr-4">
+        <v-img src="https://images.hattons.co.uk/assets/main_logo1.svg" width="100" height="50"></v-img>
+      </v-toolbar-title>
 
-      <v-menu v-model="menuCard" offset-y :close-on-content-click="true" transition="slide-x-transition" naufge-bottom="20" class="pa-5">
+      <v-menu v-model="menuCard" offset-y open-on-hover :close-on-content-click="true" transition="slide-x-transition" naufge-bottom="20" class="pa-5">
         <template v-slot:activator="{ on }">
           <v-btn v-on="on" text small dark class="text-capitalize">Product index</v-btn>
         </template>
@@ -56,7 +61,7 @@
             <v-row no-gutters>
               <v-col cols="6">
                 <v-list>
-                  <v-list-item-group>
+                  <v-list-item-group color="orange darken-2">
                     <v-list-item>
                       <v-list-item-content>
                         By Order
@@ -107,7 +112,7 @@
               </v-col>
               <v-col cols="6">
                 <v-list>
-                  <v-list-item-group>
+                  <v-list-item-group color="orange darken-2">
                     <v-list-item>
                       <v-list-item-content>
                         By Era
@@ -177,7 +182,7 @@
           <v-icon>mdi-cart</v-icon>
         </v-badge>
       </v-btn>
-      <v-avatar size="40">
+      <v-avatar size="35" class="ml-3">
       <img
         src="https://cdn.vuetifyjs.com/images/john.jpg"
         alt="John"
@@ -189,10 +194,11 @@
         <nuxt />
       </v-container>
     </v-content>
-    
+
+    <!-- footer of app -->
     <v-footer
     >
-      <h1>hello</h1>
+      <h1>**APP_FOOTER**</h1>
     </v-footer>
   </v-app>
 </template>
