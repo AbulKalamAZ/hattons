@@ -197,8 +197,52 @@
 
     <!-- footer of app -->
     <v-footer
+      color="blue-grey darken-3" dark
     >
-      <h1>**APP_FOOTER**</h1>
+      <v-container>
+        <v-row>
+          <v-col cols="4">
+            <h1 class="display-2">Hattons</h1>
+            <p class="subtitle">Your local online railway specialist</p>
+
+            <v-divider></v-divider>
+            <p class="body-2 py-4">Hattons was established by Norman Hatton upon his demob from the army in 1946. He bought a small shop in Smithdown Road, where he sold anything that was in demand after the war.</p>
+            <p class="body-2">Things we take for granted today were in high demand with little supply to be found. Items such as firewood, second hand toys and fireworks sold like hot cakes.</p>
+            
+          </v-col>
+          <v-col cols="4">
+            <h2 class="title py-3">Important Links</h2>
+            <v-divider></v-divider>
+
+
+            <v-list color="blue-grey darken-3">
+              <v-list-item>
+                <v-list-item-title>Home</v-list-item-title>
+              </v-list-item>
+              <v-list-item>
+                <v-list-item-title>About Us</v-list-item-title>
+              </v-list-item>
+              <v-list-item>
+                <v-list-item-title>Contact Us</v-list-item-title>
+              </v-list-item>
+              <v-list-item>
+                <v-list-item-title>News</v-list-item-title>
+              </v-list-item>
+              <v-list-item>
+                <v-list-item-title>Newsletter</v-list-item-title>
+              </v-list-item>
+              <v-list-item>
+                <v-list-item-title>Privacy Policy</v-list-item-title>
+              </v-list-item>
+              <v-list-item>
+                <v-list-item-title>Terms & Conditions</v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-col>
+          <v-col cols="4"></v-col>
+          <v-col cols="4"></v-col>
+        </v-row>
+      </v-container>
     </v-footer>
   </v-app>
 </template>
