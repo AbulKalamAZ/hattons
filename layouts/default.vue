@@ -197,50 +197,137 @@
 
     <!-- footer of app -->
     <v-footer
-      color="blue-grey darken-3" dark
+      color="blue-grey darken-3" dark inset
     >
       <v-container>
         <v-row>
           <v-col cols="4">
-            <h1 class="display-2">Hattons</h1>
-            <p class="subtitle">Your local online railway specialist</p>
+            <h1 class="display-1 font-weight-regular">Hattons</h1>
+            <p class="body-2">Your local online railway specialist</p>
 
-            <v-divider></v-divider>
-            <p class="body-2 py-4">Hattons was established by Norman Hatton upon his demob from the army in 1946. He bought a small shop in Smithdown Road, where he sold anything that was in demand after the war.</p>
-            <p class="body-2">Things we take for granted today were in high demand with little supply to be found. Items such as firewood, second hand toys and fireworks sold like hot cakes.</p>
+            <v-list dense color="blue-grey darken-3">
+              <v-list-item two-line>
+                <v-list-item-icon>
+                  <v-icon>mdi-phone-outline</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                  <v-list-item-title>Phone</v-list-item-title>
+                  <v-list-item-subtitle>+44 151 459 1660</v-list-item-subtitle>
+                </v-list-item-content>
+              </v-list-item>
+              <v-list-item two-line>
+                <v-list-item-icon>
+                  <v-icon>mdi-email-outline</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                  <v-list-item-title>Mail us</v-list-item-title>
+                  <v-list-item-subtitle>info@hattons.co.uk</v-list-item-subtitle>
+                </v-list-item-content>
+              </v-list-item>
+              <v-list-item two-line>
+                <v-list-item-icon>
+                  <v-icon>mdi-map-marker-radius</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                  <v-list-item-title>Address</v-list-item-title>
+                  <v-list-item-subtitle>17 Montague Road, Widnes, UK</v-list-item-subtitle>
+                </v-list-item-content>
+              </v-list-item>
+              <v-list-item two-line>
+                <v-list-item-icon>
+                  <v-icon>mdi-checkbox-marked-outline</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                  <v-list-item-title>Registration Number</v-list-item-title>
+                  <v-list-item-subtitle>51 31 251</v-list-item-subtitle>
+                </v-list-item-content>
+              </v-list-item>
+            </v-list>
             
           </v-col>
           <v-col cols="4">
-            <h2 class="title py-3">Important Links</h2>
-            <v-divider></v-divider>
+            <h1 class="display-1 font-weight-regular">Latest Updates</h1>
 
-
-            <v-list color="blue-grey darken-3">
-              <v-list-item>
-                <v-list-item-title>Home</v-list-item-title>
+            <v-list dense nav flat color="blue-grey darken-3">
+              <v-list-item link dense >
+                <v-list-item-content class="py-0">
+                  <v-list-item-title>Home</v-list-item-title>
+                </v-list-item-content>
               </v-list-item>
-              <v-list-item>
-                <v-list-item-title>About Us</v-list-item-title>
+              <v-list-item link dense >
+                <v-list-item-content class="py-0">
+                  <v-list-item-title>About Us</v-list-item-title>
+                </v-list-item-content>
               </v-list-item>
-              <v-list-item>
-                <v-list-item-title>Contact Us</v-list-item-title>
+              <v-list-item link dense >
+                <v-list-item-content class="py-0">
+                  <v-list-item-title>Contact us</v-list-item-title>
+                </v-list-item-content>
               </v-list-item>
-              <v-list-item>
-                <v-list-item-title>News</v-list-item-title>
+              <v-list-item link dense >
+                <v-list-item-content class="py-0">
+                  <v-list-item-title>News</v-list-item-title>
+                </v-list-item-content>
               </v-list-item>
-              <v-list-item>
-                <v-list-item-title>Newsletter</v-list-item-title>
+              <v-list-item link dense >
+                <v-list-item-content class="py-0">
+                  <v-list-item-title>Newsletter</v-list-item-title>
+                </v-list-item-content>
               </v-list-item>
-              <v-list-item>
-                <v-list-item-title>Privacy Policy</v-list-item-title>
+              <v-list-item link dense >
+                <v-list-item-content class="py-0">
+                  <v-list-item-title>Privacy & Policy</v-list-item-title>
+                </v-list-item-content>
               </v-list-item>
-              <v-list-item>
-                <v-list-item-title>Terms & Conditions</v-list-item-title>
+              <v-list-item link dense >
+                <v-list-item-content class="py-0">
+                  <v-list-item-title>Terms & Conditions</v-list-item-title>
+                </v-list-item-content>
               </v-list-item>
             </v-list>
           </v-col>
-          <v-col cols="4"></v-col>
-          <v-col cols="4"></v-col>
+          <v-col cols="4">
+            <h1 class="display-1 font-weight-regular text-center">Stay Connected</h1>
+            <p class="regular font-weight-regular py-5 text-center">Subscribe to our 
+              mailing list we'll send our latest release, bargains and back in stocks direct to your inbox
+            </p>
+
+            <v-row no-gutters justify="space-around" class="mt-12">
+              <v-col cols="8">
+                <v-text-field
+                  label="you@example.co.uk"
+                  background-color="orange darken-2"
+                  :loading="isSubscribed"
+                  dark
+                  solo
+                  dense
+                ></v-text-field>
+              </v-col>
+              <v-col cols="2">
+                <v-btn medium dark color="orange darken-2" @click="isSubscribed = !isSubscribed">Subscribe</v-btn>
+              </v-col>
+            </v-row>
+          </v-col>
+        </v-row>
+        <v-divider color="white"></v-divider>
+
+        <v-row no-gutters justify="center" class="py-10">
+          <v-col cols="4" class="d-flex justify-space-around">
+            <v-btn small fab color="orange darken-2">
+              <v-icon dark>mdi-facebook</v-icon>
+            </v-btn>
+            <v-btn small fab color="orange darken-2">
+              <v-icon dark>mdi-twitter</v-icon>
+            </v-btn>
+            <v-btn small fab color="orange darken-2">
+              <v-icon dark>mdi-youtube</v-icon>
+            </v-btn>
+          </v-col>
+        </v-row>
+        <v-row no-gutters justify="center">
+          <v-col cols="8">
+            <p class="body-2 mb-0 mt-5 text-center">All prices include VAT at the current rates but are subject to change without notice </p>
+          </v-col>
         </v-row>
       </v-container>
     </v-footer>
@@ -251,6 +338,10 @@
 export default {
   data () {
     return {
+      title: 'Hattons',
+      right: true,
+      rightDrawer: false,
+      miniVariant: false,
       list: 0,
       menuCard: false,
       clipped: true,
@@ -288,10 +379,10 @@ export default {
           icon: 'mdi-help-circle'
         },
       ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Hattons'
+      isSubscribed: false
+      
+      
+      
     }
   }
 }

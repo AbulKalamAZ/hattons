@@ -80,6 +80,7 @@ import CaptainCuttle from '../assets/img/train/CAPTAIN_CUTTLE.png'
 import DaveMylett from '../assets/img/train/Dave_Mylett.png'
 import Papyrus from '../assets/img/train/PAPYRUS.png'
 import WindsorLad from '../assets/img/train/WINDSOR_LAD.png'
+import Dummy from '../assets/img/train/dummy.png'
 
 export default {
   data() {
@@ -106,7 +107,7 @@ export default {
       ],
       train: [
         {
-          name: CaptainCuttle,
+          name: Dummy,
           html: `
           <div>
                 <h2>
@@ -126,7 +127,7 @@ export default {
           `
         },
         {
-          name: DaveMylett,
+          name: Dummy,
           html: `
           <div>
                 <h2>
@@ -151,7 +152,7 @@ export default {
           `
         },
         {
-          name: Papyrus,
+          name: Dummy,
           html: `
               <div class="mb-10">
                 <h2>
@@ -173,7 +174,7 @@ export default {
           `
         },
         {
-          name: WindsorLad,
+          name: Dummy,
           html: `
               <div>
                 <h2>
