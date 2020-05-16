@@ -2,12 +2,13 @@
  
  <div>
       <v-carousel
+        light
         cycle
         continuous
         height="600"
         hide-delimiter-background
-        :show-arrow="false"
-        show-arrows-on-hover
+        :show-arrows="false"
+        interval="3000"
       >
       <v-carousel-item
         v-for="(item, i) in train"
@@ -80,7 +81,6 @@ import CaptainCuttle from '../assets/img/train/CAPTAIN_CUTTLE.png'
 import DaveMylett from '../assets/img/train/Dave_Mylett.png'
 import Papyrus from '../assets/img/train/PAPYRUS.png'
 import WindsorLad from '../assets/img/train/WINDSOR_LAD.png'
-import Dummy from '../assets/img/train/dummy.png'
 
 export default {
   data() {
@@ -107,7 +107,7 @@ export default {
       ],
       train: [
         {
-          name: Dummy,
+          name: CaptainCuttle,
           html: `
           <div>
                 <h2>
@@ -127,7 +127,7 @@ export default {
           `
         },
         {
-          name: Dummy,
+          name: DaveMylett,
           html: `
           <div>
                 <h2>
@@ -152,7 +152,7 @@ export default {
           `
         },
         {
-          name: Dummy,
+          name: Papyrus,
           html: `
               <div class="mb-10">
                 <h2>
@@ -174,11 +174,11 @@ export default {
           `
         },
         {
-          name: Dummy,
+          name: WindsorLad,
           html: `
               <div>
                 <h2>
-                  <span class="font-weight-medium font-italic display-3 orange--text darken-2 text-lowecase">
+                  <span class="font-weight-medium font-italic display-3 orange--text darken-2 text-uppercase">
                     13671 products
                   </span> <br> 
                   <span class="font-weight-regular  display-2 blue-grey--text darken-4 text-uppercase">are available!</span>
