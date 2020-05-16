@@ -313,13 +313,13 @@
 
         <v-row no-gutters justify="center" class="py-10">
           <v-col cols="4" class="d-flex justify-space-around">
-            <v-btn small fab color="orange darken-2">
+            <v-btn small fab color="orange darken-2" href="https://www.facebook.com/hattonsmodelrailways">
               <v-icon dark>mdi-facebook</v-icon>
             </v-btn>
-            <v-btn small fab color="orange darken-2">
+            <v-btn small fab color="orange darken-2" href="https://twitter.com/HattonsModels">
               <v-icon dark>mdi-twitter</v-icon>
             </v-btn>
-            <v-btn small fab color="orange darken-2">
+            <v-btn small fab color="orange darken-2" href="https://www.youtube.com/user/hattonshobbies">
               <v-icon dark>mdi-youtube</v-icon>
             </v-btn>
           </v-col>
