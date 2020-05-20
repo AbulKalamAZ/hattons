@@ -272,7 +272,7 @@
             
           </v-col>
           <v-col cols="12" md="4">
-            <h1 class="display-1 font-weight-regular text-center text-md-left">Latest Updates</h1>
+            <h1 class="display-1 font-weight-regular text-center text-md-left">Site Navigation</h1>
 
             <v-list dense nav flat color="blue-grey darken-3">
               <v-list-item link dense >
@@ -313,24 +313,32 @@
             </v-list>
           </v-col>
           <v-col cols="12" md="4">
-            <h1 class="display-1 font-weight-regular text-center">Stay Connected</h1>
-            <p class="regular font-weight-regular py-5 text-center">Subscribe to our 
+            <h1 class="display-1 font-weight-regular text-center text-md-left">Stay Connected</h1>
+            <p class="regular font-weight-regular py-5 text-center text-md-left">Subscribe to our 
               mailing list we'll send our latest release, bargains and back in stocks direct to your inbox
             </p>
 
             <v-row no-gutters justify="space-around" class="mt-12">
-              <v-col cols="12" md="7">
+              <v-col cols="12">
                 <v-text-field
                   label="you@example.co.uk"
-                  background-color="orange darken-2"
+                  color="orange darken-2"
                   :loading="isSubscribed"
-                  dark
+                  loader-height="3"
+                  light
                   solo
                   dense
-                ></v-text-field>
-              </v-col>
-              <v-col cols="4" md="2" class="d-flex justify-center">
-                <v-btn medium dark color="orange darken-2" @click="isSubscribed = !isSubscribed">Subscribe</v-btn>
+                >
+mdi-send                <v-icon
+                   medium 
+                   dark 
+                   slot="append"
+                   color="orange darken-2" 
+                   @click="isSubscribed = !isSubscribed"
+                  >
+                    mdi-send
+                  </v-icon>
+                </v-text-field>
               </v-col>
             </v-row>
           </v-col>
