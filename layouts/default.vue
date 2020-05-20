@@ -16,65 +16,22 @@
         </v-toolbar-title>
       </v-toolbar>
       <v-list>
-        <v-list-group
-          class="d-block d-md-none"
-          group
-          prepend-icon="mdi-map"
-          color="orange darken-2"
-        >
-          <template v-slot:activator>
-            <v-list-tile>
-              <v-list-tile-title>Site navigation</v-list-tile-title>
-            </v-list-tile>
-          </template>
-          <v-list-item>
+        <!-- site navigation -->
+        <MobileToolbar />
+        <v-list-item-group v-model="list" color="orange darken-2">
+          <v-list-item
+            v-for="(item, i) in items"
+            :key="i"
+          >
+            <v-list-item-icon>
+              <v-icon v-text="item.icon"></v-icon>
+            </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title>Product Index</v-list-item-title>
+              <v-list-item-title v-text="item.title"></v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item>
-            <v-list-item-content>
-              <v-list-item-title>Brands</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-          <v-list-item>
-            <v-list-item-content>
-              <v-list-item-title>New Stocks</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-          <v-list-item>
-            <v-list-item-content>
-              <v-list-item-title>Pre-owned</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-          <v-list-item>
-            <v-list-item-content>
-              <v-list-item-title>Future Releases</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-
-        </v-list-group>
-
-
-
-
-
-
-
-      <v-list-item-group v-model="list" color="orange darken-2">
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-        >
-          <v-list-item-icon>
-            <v-icon v-text="item.icon"></v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title v-text="item.title"></v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list-item-group>
-    </v-list>
+        </v-list-item-group>
+      </v-list>
     </v-navigation-drawer>
 
     <!-- app bar -->
@@ -92,7 +49,7 @@
       </v-toolbar-title>
 
         
-        <v-toolbar-items color="orange darken-2" class="text-capitalize d-none d-md-block">
+        <v-toolbar-items v-if="!showSearchBox" color="orange darken-2" class="text-capitalize d-none d-md-block">
           <v-menu v-model="menuCard" offset-y open-on-hover :close-on-content-click="true" transition="slide-x-transition" naufge-bottom="20" class="pa-5">
             <template v-slot:activator="{ on }">
               <v-btn v-on="on" text dark class="text-capitalize">Product Index</v-btn>
@@ -219,7 +176,26 @@
         </v-toolbar-items>
       <v-spacer></v-spacer>
 
-      <v-btn icon dark>
+      <v-slide-x-reverse-transition
+        hide-on-leave
+      >
+        <v-text-field
+          v-if="showSearchBox"
+          v-model="searchBoxValue"
+          placeholder="Search our store"
+          prepend-inner-icon="mdi-magnify"
+          append-icon="mdi-close"
+          @click:append="clearSearchBox"
+          autofocus
+          filled
+          rounded
+          dense
+          dark
+          class="mt-7"
+        >
+        </v-text-field>
+      </v-slide-x-reverse-transition>
+      <v-btn v-if="!showSearchBox" icon dark @click="showSearchBox = !showSearchBox">
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
       <v-btn icon dark class="d-none d-md-block">
@@ -385,9 +361,17 @@
 </template>
 
 <script>
+import MobileToolbar from '../components/layout/MobileToolbar'
+
+
 export default {
+  components: {
+    MobileToolbar: MobileToolbar
+  },
   data () {
     return {
+      showSearchBox: false,
+      searchBoxValue: '',
       title: 'Hattons',
       right: true,
       rightDrawer: false,
@@ -429,14 +413,19 @@ export default {
           icon: 'mdi-help-circle'
         },
       ],
-      isSubscribed: false,
-      admins: [
-        ['Management', 'mdi-people_outline'],
-        ['Settings', 'mdi-settings']
-      ]
-      
-      
-      
+      isSubscribed: false
+    }
+  },
+  methods: {
+    clearSearchBox() {
+      console.log(this.searchBoxValue)
+      if(this.searchBoxValue === '') {
+        this.showSearchBox = !this.showSearchBox
+      } else {
+        this.searchBoxValue = ''
+        this.showSearchBox = !this.showSearchBox
+
+      }
     }
   }
 }
