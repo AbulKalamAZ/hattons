@@ -172,9 +172,9 @@
           <v-btn text dark class="text-capitalize">Brands</v-btn>
           <v-btn text dark class="text-capitalize">New Stocks</v-btn>
           <v-btn text dark class="text-capitalize">Pre-owned</v-btn>
-          <nuxt-link to="/products">
-            <v-btn text dark class="text-capitalize">Future Release</v-btn>
-          </nuxt-link>
+          
+          <v-btn text dark class="text-capitalize" to="/products">Future Release</v-btn>
+          
         </v-toolbar-items>
       <v-spacer></v-spacer>
 
