@@ -8,6 +8,7 @@
 
     <!-- our featured products -->
     <OurFeaturedProducts />
+
   </div>
 </template>
 

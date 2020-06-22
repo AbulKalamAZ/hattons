@@ -43,9 +43,11 @@
     >
       <v-app-bar-nav-icon dark @click.stop="drawer = !drawer" class="d-none d-md-block" />
     
-      <v-toolbar-title class="white--text px-0 px-md-4">
-        <v-img class="d-block d-md-none" src="https://images.hattons.co.uk/assets/main_logo1.svg" width="70" height="35"></v-img>
-        <v-img class="d-none d-md-block" src="https://images.hattons.co.uk/assets/main_logo1.svg" width="90" height="45"></v-img>
+      <v-toolbar-title  class="white--text px-0 px-md-4">
+        <nuxt-link to="/">
+          <v-img class="d-block d-md-none" src="https://images.hattons.co.uk/assets/main_logo1.svg" width="70" height="35"></v-img>
+          <v-img class="d-none d-md-block" src="https://images.hattons.co.uk/assets/main_logo1.svg" width="90" height="45"></v-img>
+        </nuxt-link>
       </v-toolbar-title>
 
         
@@ -173,30 +175,19 @@
           <v-btn text dark class="text-capitalize">New Stocks</v-btn>
           <v-btn text dark class="text-capitalize">Pre-owned</v-btn>
           
-          <v-btn text dark class="text-capitalize" to="/products">Future Release</v-btn>
+          <v-btn text dark class="text-capitalize">Future Release</v-btn>
           
         </v-toolbar-items>
       <v-spacer></v-spacer>
 
-      <v-slide-x-reverse-transition
-        hide-on-leave
-      >
-        <v-text-field
-          v-if="showSearchBox"
-          v-model="searchBoxValue"
-          placeholder="Search our store"
-          prepend-inner-icon="mdi-magnify"
-          append-icon="mdi-close"
-          @click:append="clearSearchBox"
-          autofocus
-          filled
-          rounded
-          dense
-          dark
-          class="mt-7"
+        <v-slide-x-reverse-transition
+          hide-on-leave
         >
-        </v-text-field>
-      </v-slide-x-reverse-transition>
+          <v-col cols="12" md="6" v-if="showSearchBox">
+            <AlgoliaSearchBox :ToogleSearchBox="clearSearchBox" />
+          </v-col>
+        </v-slide-x-reverse-transition>
+      
       <v-btn v-if="!showSearchBox" icon dark @click="showSearchBox = !showSearchBox">
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
@@ -218,9 +209,10 @@
       <v-app-bar-nav-icon dark @click.stop="drawer = !drawer" class="d-block d-md-none" />
     </v-app-bar>
     <v-content>
-      <v-container fluid class=" pa-0">
+      <!-- <v-container fluid class=" pa-0">
         <nuxt />
-      </v-container>
+      </v-container> -->
+      <nuxt />
     </v-content>
 
     <!-- footer of app -->
@@ -372,11 +364,13 @@ mdi-send                <v-icon
 
 <script>
 import MobileToolbar from '../components/layout/MobileToolbar'
+import AlgoliaSearchBox from '../components/home/AlgoliaSearchBox'
 
 
 export default {
   components: {
-    MobileToolbar: MobileToolbar
+    MobileToolbar: MobileToolbar,
+    AlgoliaSearchBox: AlgoliaSearchBox
   },
   data () {
     return {
@@ -428,14 +422,7 @@ export default {
   },
   methods: {
     clearSearchBox() {
-      console.log(this.searchBoxValue)
-      if(this.searchBoxValue === '') {
         this.showSearchBox = !this.showSearchBox
-      } else {
-        this.searchBoxValue = ''
-        this.showSearchBox = !this.showSearchBox
-
-      }
     }
   }
 }

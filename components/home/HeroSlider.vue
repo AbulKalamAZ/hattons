@@ -19,7 +19,7 @@
             <v-row
               class="fill-height py-10"
               align="center"
-              justify="around"
+              justify="space-around"
             >
               <v-col cols="12" md="6" class="d-flex justify-center" v-html="item.html">
                 

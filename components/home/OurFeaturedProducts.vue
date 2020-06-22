@@ -86,10 +86,8 @@
     <v-row no-gutters>
         <v-col cols="12" class="d-flex justify-center py-5">
             <v-btn medium outlined dark color="orange darken-2">
-                <v-btn-content>
                     See More
                     <v-icon right>mdi-arrow-right</v-icon>
-                </v-btn-content>
             </v-btn>
         </v-col>
     </v-row>

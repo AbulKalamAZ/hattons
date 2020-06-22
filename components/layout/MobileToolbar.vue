@@ -8,7 +8,7 @@
     >
         <template v-slot:activator>
             <v-list-item-content>
-                <v-list-tile-title>Site navigation</v-list-tile-title>
+                <v-list-item-title>Site navigation</v-list-item-title>
             </v-list-item-content>
         </template>
 

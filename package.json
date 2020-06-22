@@ -11,7 +11,11 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "nuxt": "^2.0.0"
+    "algoliasearch": "^4.3.0",
+    "instantsearch.css": "^7.4.2",
+    "nuxt": "^2.0.0",
+    "vue-autosuggest": "^2.1.2",
+    "vue-instantsearch": "^2.7.1"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.0.0"
